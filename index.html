@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#1e293b">
     <meta name="description" content="Track your stock portfolio with ease">
+    <link rel="manifest" href="data:application/json;base64,eyJuYW1lIjoiU3RvY2sgUG9ydGZvbGlvIFRyYWNrZXIiLCJzaG9ydF9uYW1lIjoiUG9ydGZvbGlvIiwiZGVzY3JpcHRpb24iOiJUcmFjayB5b3VyIHN0b2NrIHBvcnRmb2xpbyB3aXRoIGVhc2UiLCJzdGFydF91cmwiOiIuLyIsImRpc3BsYXkiOiJzdGFuZGFsb25lIiwiYmFja2dyb3VuZF9jb2xvciI6IiMxZTI5M2IiLCJ0aGVtZV9jb2xvciI6IiMxZTI5M2IiLCJpY29ucyI6W3sic3JjIjoiZGF0YTppbWFnZS9zdmcreG1sO2Jhc2U2NCxQSE4yWnlCM2FXUjBhRDBpTVRJNElpQm9aV2xuYUhROUlqRXlPQ0lnZG1sbGQwSnZlRDBpTUNBd0lERXlPQ0F4TWpnaUlHWnBiR3c5SW01dmJtVWlJSGh0Ykc1elBTSm9kSFJ3T2k4dmQzZDNMbmN6TG05eVp5OHlNREF3TDNOMlp5SStQSEpsWTNRZ2QybGtkR2c5SWpFeU9DSWdhR1ZwWjJoMFBTSXhNamdpSUhKNFBTSXhOaUlnWm1sc2JEMGlJekl6TmpWbFlpSXZQanh3WVhSb0lHUTlJazB6TWlBMk5FdzJOQ0F6TWt3NU5pQTJORXc1TmlBeE1ESTZJU0lnWm1sc2JEMGlJemhqWldZeFl6SWlMejQ4Y0dGMGFDQmtQU0pOTkRnZ056SkROelFnTnpJZ09UWWdPVFlnT1RZZ056SkVJaUJtYVd4c1BTSWpNVFpoTXpSaElpOCtQSEJoZEdnZ1pEMGlUVFl3SURVeVRUUTRJRGcwVERZMElEYzJURGN5SURZMFdpSWdabWxzYkQwaUl6RTJZVFE0WVNJdlBqd3ZjM1puUGc9PSIsInNpemVzIjoiMTI4eDEyOCIsInR5cGUiOiJpbWFnZS9zdmcreG1sIn0seyJzcmMiOiJkYXRhOmltYWdlL3N2Zyt4bWw7YmFzZTY0LFBITjJaeUIzYVdSMGFEMGlOVEV5SWlCb1pXbG5hSFE5SWpVeE1pSWdkbWxsZDBKdmVEMGlNQ0F3SURVMU1pQTFNVElpSUdacGJHdzlJbTV2Ym1VaUlIaHRiRzV6UFNKb2RIUndPaTh2ZDNkM0xuY3pMbTl5Wnk4eU1EQXdMM04yWnlJK1BISmxZM1FnZDJsa2RHZzlJalV4TWlJZ2FHVnBaMmgwUFNJMU1USWlJSEo0UFNJMk5DSWdabWxzYkQwaUl6SXpOalZsWWlJdlBqeHdZWFJvSUdROUlrMHhNamtnTWpVMlRESTFOaUF4TWpoTU16ZzBJREkxTmtVaUlHWnBiR3c5SWlNNFkyVm1NV015SWk4K1BIQmhkR2dnWkQwaVRURTVNaUF5T0RoRE1qazJJREk0T0NBME1EQWdNemcwSURRd01DQXlPRGhFSWlCbWFXeHNQU0lqTVRaaE16UmhJaTgrUEhCaGRHZ2daRDBpVFRJME1DQXlNRGhOTVRreklETXpOa3d5TlRZZ01qZzBUREl1TmpBZ01qVTJXaUlnWm1sc2JEMGlJekUyWVRRNFlTSXZQand2YzNablBnPT0iLCJzaXplcyI6IjUxMng1MTIiLCJ0eXBlIjoiaW1hZ2Uvc3ZnK3htbCJ9XX0=">
+    <link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTI4IiBoZWlnaHQ9IjEyOCIgdmlld0JveD0iMCAwIDEyOCAxMjgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjEyOCIgaGVpZ2h0PSIxMjgiIHJ4PSIxNiIgZmlsbD0iIzIzNjVlYiIvPjxwYXRoIGQ9Ik0zMiA2NEw2NCAzMkw5NiA2NEw5NiAxMDZaIiBmaWxsPSIjOGNlZjFjMiIvPjxwYXRoIGQ9Ik00OCA3MkM3NCA3MiA5NiA5NiA5NiA3MkQiIGZpbGw9IiMxNmEzNGEiLz48cGF0aCBkPSJNNjAgNTJNNDggODRMNjQgNzZMNzIgNjRaIiBmaWxsPSIjMTZhNDhhIi8+PC9zdmc+">
     <title>Stock Portfolio Tracker</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -19,6 +21,27 @@
         .header { text-align: center; margin-bottom: 30px; }
         .header h1 { font-size: 2rem; margin-bottom: 10px; }
         .header p { color: #94a3b8; font-size: 0.9rem; }
+        
+        /* Install Banner */
+        .install-banner {
+            background: linear-gradient(135deg, #2563eb 0%, #9333ea 100%);
+            padding: 15px 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            animation: slideDown 0.5s ease-out;
+        }
+        @keyframes slideDown {
+            from { transform: translateY(-100%); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .install-banner-text h3 { font-size: 1.1rem; margin-bottom: 5px; }
+        .install-banner-text p { font-size: 0.85rem; color: #bfdbfe; }
+        .install-banner-actions { display: flex; gap: 10px; }
+        
         .controls { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin: 20px 0; }
         .btn { 
             padding: 10px 20px; 
@@ -37,6 +60,9 @@
         .btn-purple:hover { background: #7e22ce; }
         .btn-red { background: #dc2626; color: white; }
         .btn-red:hover { background: #b91c1c; }
+        .btn-white { background: white; color: #1e293b; }
+        .btn-white:hover { background: #f1f5f9; }
+        .btn-outline { background: transparent; color: white; border: 2px solid white; }
         .btn-sm { padding: 5px 10px; font-size: 0.8rem; }
         .badge { 
             display: inline-flex; 
@@ -132,10 +158,39 @@
         .empty-state { text-align: center; padding: 40px 20px; color: #94a3b8; }
         .hidden { display: none; }
         input[type="color"] { height: 40px; cursor: pointer; }
+        
+        /* Offline indicator */
+        .offline-badge {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #dc2626;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            z-index: 1000;
+        }
+        .online-badge {
+            background: #16a34a;
+        }
     </style>
 </head>
 <body>
     <div class="container">
+        <!-- Install Banner -->
+        <div id="installBanner" class="install-banner hidden">
+            <div class="install-banner-text">
+                <h3>📱 Install App</h3>
+                <p>Add to home screen for quick access!</p>
+            </div>
+            <div class="install-banner-actions">
+                <button class="btn btn-white btn-sm" onclick="installApp()">Install</button>
+                <button class="btn btn-outline btn-sm" onclick="dismissInstall()">Later</button>
+            </div>
+        </div>
+
         <div class="header">
             <h1>📊 Stock Portfolio Tracker</h1>
             <p>Manage your trades and track performance</p>
@@ -216,12 +271,64 @@
         </div>
     </div>
 
+    <!-- Offline/Online Badge -->
+    <div id="connectionBadge" class="hidden"></div>
+
     <script>
         let transactions = [];
         let completedStocks = [];
         let selectedStock = null;
         let editingId = null;
+        let deferredPrompt;
 
+        // PWA Installation
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            document.getElementById('installBanner').classList.remove('hidden');
+        });
+
+        function installApp() {
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                deferredPrompt.userChoice.then((choiceResult) => {
+                    if (choiceResult.outcome === 'accepted') {
+                        console.log('App installed');
+                    }
+                    deferredPrompt = null;
+                    document.getElementById('installBanner').classList.add('hidden');
+                });
+            }
+        }
+
+        function dismissInstall() {
+            document.getElementById('installBanner').classList.add('hidden');
+            localStorage.setItem('installDismissed', 'true');
+        }
+
+        // Check if install was dismissed
+        if (localStorage.getItem('installDismissed') === 'true') {
+            document.getElementById('installBanner').classList.add('hidden');
+        }
+
+        // Online/Offline detection
+        function updateConnectionStatus() {
+            const badge = document.getElementById('connectionBadge');
+            if (navigator.onLine) {
+                badge.className = 'offline-badge online-badge';
+                badge.textContent = '🟢 Online';
+                setTimeout(() => badge.classList.add('hidden'), 3000);
+            } else {
+                badge.className = 'offline-badge';
+                badge.textContent = '🔴 Offline';
+                badge.classList.remove('hidden');
+            }
+        }
+
+        window.addEventListener('online', updateConnectionStatus);
+        window.addEventListener('offline', updateConnectionStatus);
+
+        // LocalStorage with auto-save
         function saveToLocalStorage() {
             try {
                 localStorage.setItem('portfolioTransactions', JSON.stringify(transactions));
@@ -229,7 +336,7 @@
                 document.getElementById('lastSaved').classList.remove('hidden');
                 document.getElementById('savedTime').textContent = new Date().toLocaleTimeString();
             } catch (e) {
-                console.error('Error saving:', e);
+                console.error('Error saving to localStorage:', e);
             }
         }
 
@@ -243,13 +350,14 @@
                 
                 if (transactions.length > 0 || completedStocks.length > 0) {
                     document.getElementById('lastSaved').classList.remove('hidden');
-                    document.getElementById('savedTime').textContent = 'Restored from storage';
+                    document.getElementById('savedTime').textContent = 'Restored from local storage';
                 }
             } catch (e) {
-                console.error('Error loading:', e);
+                console.error('Error loading from localStorage:', e);
             }
         }
 
+        // Initialize
         document.getElementById('date').valueAsDate = new Date();
         loadFromLocalStorage();
         render();
@@ -386,7 +494,7 @@
             }
         }
 
-        function exportData() {
+        function exportData(autoSave = false) {
             const data = {
                 transactions,
                 completedStocks,
@@ -405,6 +513,7 @@
             
             link.click();
             URL.revokeObjectURL(url);
+            
             saveToLocalStorage();
         }
 
@@ -423,7 +532,7 @@
                     alert('✅ Data imported successfully!');
                     render();
                 } catch (error) {
-                    alert('❌ Error importing data.');
+                    alert('❌ Error importing data. Please check the file format.');
                 }
             };
             reader.readAsText(file);
@@ -528,6 +637,8 @@
                 document.getElementById('transactionSection').classList.add('hidden');
             }
         }
+
+        render();
     </script>
 </body>
 </html>
