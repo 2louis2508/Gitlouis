@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#1e293b">
+    <meta name="description" content="Track your stock portfolio with ease">
+    <link rel="manifest" href="data:application/json;base64,eyJuYW1lIjoiU3RvY2sgUG9ydGZvbGlvIFRyYWNrZXIiLCJzaG9ydF9uYW1lIjoiUG9ydGZvbGlvIiwiZGVzY3JpcHRpb24iOiJUcmFjayB5b3VyIHN0b2NrIHBvcnRmb2xpbyB3aXRoIGVhc2UiLCJzdGFydF91cmwiOiIuLyIsImRpc3BsYXkiOiJzdGFuZGFsb25lIiwiYmFja2dyb3VuZF9jb2xvciI6IiMxZTI5M2IiLCJ0aGVtZV9jb2xvciI6IiMxZTI5M2IiLCJpY29ucyI6W3sic3JjIjoiZGF0YTppbWFnZS9zdmcreG1sO2Jhc2U2NCxQSE4yWnlCM2FXUjBhRDBpTVRJNElpQm9aV2xuYUhROUlqRXlPQ0lnZG1sbGQwSnZlRDBpTUNBd0lERXlPQ0F4TWpnaUlHWnBiR3c5SW01dmJtVWlJSGh0Ykc1elBTSm9kSFJ3T2k4dmQzZDNMbmN6TG05eVp5OHlNREF3TDNOMlp5SStQSEpsWTNRZ2QybGtkR2c5SWpFeU9DSWdhR1ZwWjJoMFBTSXhNamdpSUhKNFBTSXhOaUlnWm1sc2JEMGlJekl6TmpWbFlpSXZQanh3WVhSb0lHUTlJazB6TWlBMk5FdzJOQ0F6TWt3NU5pQTJORXc1TmlBeE1ESTZJU0lnWm1sc2JEMGlJemhqWldZeFl6SWlMejQ4Y0dGMGFDQmtQU0pOTkRnZ056SkROelFnTnpJZ09UWWdPVFlnT1RZZ056SkVJaUJtYVd4c1BTSWpNVFpoTXpSaElpOCtQSEJoZEdnZ1pEMGlUVFl3SURVeVRUUTRJRGcwVERZMElEYzJURGN5SURZMFdpSWdabWxzYkQwaUl6RTJZVFE0WVNJdlBqd3ZjM1puUGc9PSIsInNpemVzIjoiMTI4eDEyOCIsInR5cGUiOiJpbWFnZS9zdmcreG1sIn0seyJzcmMiOiJkYXRhOmltYWdlL3N2Zyt4bWw7YmFzZTY0LFBITjJaeUIzYVdSMGFEMGlOVEV5SWlCb1pXbG5hSFE5SWpVeE1pSWdkbWxsZDBKdmVEMGlNQ0F3SURVMU1pQTFNVElpSUdacGJHdzlJbTV2Ym1VaUlIaHRiRzV6UFNKb2RIUndPaTh2ZDNkM0xuY3pMbTl5Wnk4eU1EQXdMM04yWnlJK1BISmxZM1FnZDJsa2RHZzlJalV4TWlJZ2FHVnBaMmgwUFNJMU1USWlJSEo0UFNJMk5DSWdabWxzYkQwaUl6SXpOalZsWWlJdlBqeHdZWFJvSUdROUlrMHhNamtnTWpVMlRESTFOaUF4TWpoTU16ZzBJREkxTmtVaUlHWnBiR3c5SWlNNFkyVm1NV015SWk4K1BIQmhkR2dnWkQwaVRURTVNaUF5T0RoRE1qazJJREk0T0NBME1EQWdNemcwSURRd01DQXlPRGhFSWlCbWFXeHNQU0lqTVRaaE16UmhJaTgrUEhCaGRHZ2daRDBpVFRJME1DQXlNRGhOTVRreklETXpOa3d5TlRZZ01qZzBUREl1TmpBZ01qVTJXaUlnWm1sc2JEMGlJekUyWVRRNFlTSXZQand2YzNablBnPT0iLCJzaXplcyI6IjUxMng1MTIiLCJ0eXBlIjoiaW1hZ2Uvc3ZnK3htbCJ9XX0=">
+    <link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTI4IiBoZWlnaHQ9IjEyOCIgdmlld0JveD0iMCAwIDEyOCAxMjgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHJlY3Qgd2lkdGg9IjEyOCIgaGVpZ2h0PSIxMjgiIHJ4PSIxNiIgZmlsbD0iIzIzNjVlYiIvPjxwYXRoIGQ9Ik0zMiA2NEw2NCAzMkw5NiA2NEw5NiAxMDZaIiBmaWxsPSIjOGNlZjFjMiIvPjxwYXRoIGQ9Ik00OCA3MkM3NCA3MiA5NiA5NiA5NiA3MkQiIGZpbGw9IiMxNmEzNGEiLz48cGF0aCBkPSJNNjAgNTJNNDggODRMNjQgNzZMNzIgNjRaIiBmaWxsPSIjMTZhNDhhIi8+PC9zdmc+">
+    <title>Stock Portfolio Tracker</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #1e293b 0%, #334155 50%, #1e293b 100%);
+            min-height: 100vh;
+            color: #fff;
+            padding: 20px;
+        }
+        .container { max-width: 1200px; margin: 0 auto; }
+        .header { text-align: center; margin-bottom: 30px; }
+        .header h1 { font-size: 2rem; margin-bottom: 10px; }
+        .header p { color: #94a3b8; font-size: 0.9rem; }
+        
+        /* Install Banner */
+        .install-banner {
+            background: linear-gradient(135deg, #2563eb 0%, #9333ea 100%);
+            padding: 15px 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            animation: slideDown 0.5s ease-out;
+        }
+        @keyframes slideDown {
+            from { transform: translateY(-100%); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .install-banner-text h3 { font-size: 1.1rem; margin-bottom: 5px; }
+        .install-banner-text p { font-size: 0.85rem; color: #bfdbfe; }
+        .install-banner-actions { display: flex; gap: 10px; }
+        
+        .controls { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin: 20px 0; }
+        .btn { 
+            padding: 10px 20px; 
+            border: none; 
+            border-radius: 8px; 
+            cursor: pointer; 
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.2s;
+        }
+        .btn-green { background: #16a34a; color: white; }
+        .btn-green:hover { background: #15803d; }
+        .btn-blue { background: #2563eb; color: white; }
+        .btn-blue:hover { background: #1d4ed8; }
+        .btn-purple { background: #9333ea; color: white; }
+        .btn-purple:hover { background: #7e22ce; }
+        .btn-red { background: #dc2626; color: white; }
+        .btn-red:hover { background: #b91c1c; }
+        .btn-white { background: white; color: #1e293b; }
+        .btn-white:hover { background: #f1f5f9; }
+        .btn-outline { background: transparent; color: white; border: 2px solid white; }
+        .btn-sm { padding: 5px 10px; font-size: 0.8rem; }
+        .badge { 
+            display: inline-flex; 
+            align-items: center; 
+            gap: 5px; 
+            padding: 8px 12px; 
+            background: #fef3c7; 
+            color: #92400e; 
+            border-radius: 8px; 
+            font-size: 0.75rem;
+            border: 1px solid #fbbf24;
+        }
+        .net-balance { 
+            background: linear-gradient(135deg, #2563eb 0%, #9333ea 100%);
+            padding: 30px;
+            border-radius: 16px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        .net-balance p:first-child { color: #bfdbfe; font-size: 0.9rem; margin-bottom: 5px; }
+        .net-balance .amount { font-size: 2.5rem; font-weight: bold; }
+        .positive { color: #86efac !important; }
+        .negative { color: #fca5a5 !important; }
+        .grid { display: grid; grid-template-columns: 1fr; gap: 20px; }
+        @media (min-width: 1024px) { .grid { grid-template-columns: 1fr 2fr; } }
+        .card { 
+            background: #1e293b; 
+            border: 1px solid #334155; 
+            border-radius: 12px; 
+            padding: 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        }
+        .card h2 { font-size: 1.3rem; margin-bottom: 20px; }
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; font-size: 0.85rem; color: #cbd5e1; margin-bottom: 5px; }
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 10px;
+            background: #334155;
+            border: 1px solid #475569;
+            border-radius: 8px;
+            color: white;
+            font-size: 1rem;
+        }
+        .form-group input:focus, .form-group select:focus {
+            outline: none;
+            border-color: #3b82f6;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+        }
+        .stock-item {
+            background: #334155;
+            border: 1px solid #475569;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .stock-item:hover { background: #475569; }
+        .stock-item h3 { font-size: 1.1rem; margin-bottom: 10px; }
+        .stock-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; font-size: 0.9rem; }
+        .stock-stats label { color: #94a3b8; }
+        .transaction {
+            background: #334155;
+            border-left: 4px solid;
+            border-radius: 8px;
+            padding: 12px;
+            margin-bottom: 8px;
+        }
+        .transaction-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 5px; }
+        .transaction-type { 
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: bold;
+        }
+        .type-buy { background: #166534; color: #86efac; }
+        .type-sell { background: #7f1d1d; color: #fca5a5; }
+        .transaction-actions { display: flex; gap: 5px; }
+        .icon-btn { 
+            background: none; 
+            border: none; 
+            cursor: pointer; 
+            padding: 5px;
+            color: #94a3b8;
+        }
+        .icon-btn:hover { color: #3b82f6; }
+        .edit-form { display: grid; gap: 8px; }
+        .edit-row { display: grid; grid-template-columns: 1fr 1fr 80px; gap: 8px; }
+        .edit-form input { padding: 6px; font-size: 0.9rem; }
+        .empty-state { text-align: center; padding: 40px 20px; color: #94a3b8; }
+        .hidden { display: none; }
+        input[type="color"] { height: 40px; cursor: pointer; }
+        
+        /* Offline indicator */
+        .offline-badge {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #dc2626;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 8px;
+            font-size: 0.85rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            z-index: 1000;
+        }
+        .online-badge {
+            background: #16a34a;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Install Banner -->
+        <div id="installBanner" class="install-banner hidden">
+            <div class="install-banner-text">
+                <h3>📱 Install App</h3>
+                <p>Add to home screen for quick access!</p>
+            </div>
+            <div class="install-banner-actions">
+                <button class="btn btn-white btn-sm" onclick="installApp()">Install</button>
+                <button class="btn btn-outline btn-sm" onclick="dismissInstall()">Later</button>
+            </div>
+        </div>
+
+        <div class="header">
+            <h1>📊 Stock Portfolio Tracker</h1>
+            <p>Manage your trades and track performance</p>
+        </div>
+
+        <div class="controls">
+            <button class="btn btn-green" onclick="exportData()">💾 Export Data</button>
+            <button class="btn btn-blue" onclick="document.getElementById('fileInput').click()">📂 Import Data</button>
+            <input type="file" id="fileInput" accept=".json" onchange="importData(event)" style="display:none">
+            <span class="badge">💡 Auto-saves locally</span>
+        </div>
+
+        <div id="lastSaved" class="controls hidden">
+            <span class="badge" style="background: #dcfce7; color: #166534; border-color: #86efac;">
+                ✓ Last saved: <span id="savedTime"></span>
+            </span>
+        </div>
+
+        <div class="net-balance">
+            <p>Net Money Balance</p>
+            <p class="amount" id="netBalance">$0.00</p>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <h2>➕ Add Transaction</h2>
+                <div class="form-group">
+                    <label>Ticker</label>
+                    <input type="text" id="ticker" placeholder="AAPL, TSLA, etc.">
+                </div>
+                <div class="form-group">
+                    <label>Type</label>
+                    <select id="type" onchange="updateColor()">
+                        <option value="buy">Buy</option>
+                        <option value="sell">Sell</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Volume</label>
+                    <input type="number" id="volume" step="0.01" placeholder="0.00">
+                </div>
+                <div class="form-group">
+                    <label>Price</label>
+                    <input type="number" id="price" step="0.01" placeholder="0.00">
+                </div>
+                <div class="form-group">
+                    <label>Date</label>
+                    <input type="date" id="date">
+                </div>
+                <div class="form-group">
+                    <label>Color</label>
+                    <input type="color" id="color" value="#22c55e">
+                </div>
+                <button class="btn btn-blue" onclick="addTransaction()" style="width: 100%;">Add Transaction</button>
+            </div>
+
+            <div>
+                <div class="card" style="margin-bottom: 20px;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                        <h2 style="margin: 0;">📈 Active Stocks</h2>
+                        <button class="btn btn-sm btn-purple" onclick="toggleArchived()">
+                            <span id="archiveToggle">Show</span> Completed (<span id="completedCount">0</span>)
+                        </button>
+                    </div>
+                    <div id="stockList"></div>
+                </div>
+
+                <div id="completedSection" class="card hidden" style="margin-bottom: 20px;">
+                    <h2>✅ Completed Stocks</h2>
+                    <div id="completedList"></div>
+                </div>
+
+                <div id="transactionSection" class="card hidden">
+                    <h2><span id="selectedTicker"></span> Transactions</h2>
+                    <div id="transactionList"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Offline/Online Badge -->
+    <div id="connectionBadge" class="hidden"></div>
+
+    <script>
+        let transactions = [];
+        let completedStocks = [];
+        let selectedStock = null;
+        let editingId = null;
+        let deferredPrompt;
+
+        // PWA Installation
+        window.addEventListener('beforeinstallprompt', (e) => {
+            e.preventDefault();
+            deferredPrompt = e;
+            document.getElementById('installBanner').classList.remove('hidden');
+        });
+
+        function installApp() {
+            if (deferredPrompt) {
+                deferredPrompt.prompt();
+                deferredPrompt.userChoice.then((choiceResult) => {
+                    if (choiceResult.outcome === 'accepted') {
+                        console.log('App installed');
+                    }
+                    deferredPrompt = null;
+                    document.getElementById('installBanner').classList.add('hidden');
+                });
+            }
+        }
+
+        function dismissInstall() {
+            document.getElementById('installBanner').classList.add('hidden');
+            localStorage.setItem('installDismissed', 'true');
+        }
+
+        // Check if install was dismissed
+        if (localStorage.getItem('installDismissed') === 'true') {
+            document.getElementById('installBanner').classList.add('hidden');
+        }
+
+        // Online/Offline detection
+        function updateConnectionStatus() {
+            const badge = document.getElementById('connectionBadge');
+            if (navigator.onLine) {
+                badge.className = 'offline-badge online-badge';
+                badge.textContent = '🟢 Online';
+                setTimeout(() => badge.classList.add('hidden'), 3000);
+            } else {
+                badge.className = 'offline-badge';
+                badge.textContent = '🔴 Offline';
+                badge.classList.remove('hidden');
+            }
+        }
+
+        window.addEventListener('online', updateConnectionStatus);
+        window.addEventListener('offline', updateConnectionStatus);
+
+        // LocalStorage with auto-save
+        function saveToLocalStorage() {
+            try {
+                localStorage.setItem('portfolioTransactions', JSON.stringify(transactions));
+                localStorage.setItem('portfolioCompleted', JSON.stringify(completedStocks));
+                document.getElementById('lastSaved').classList.remove('hidden');
+                document.getElementById('savedTime').textContent = new Date().toLocaleTimeString();
+            } catch (e) {
+                console.error('Error saving to localStorage:', e);
+            }
+        }
+
+        function loadFromLocalStorage() {
+            try {
+                const savedTransactions = localStorage.getItem('portfolioTransactions');
+                const savedCompleted = localStorage.getItem('portfolioCompleted');
+                
+                if (savedTransactions) transactions = JSON.parse(savedTransactions);
+                if (savedCompleted) completedStocks = JSON.parse(savedCompleted);
+                
+                if (transactions.length > 0 || completedStocks.length > 0) {
+                    document.getElementById('lastSaved').classList.remove('hidden');
+                    document.getElementById('savedTime').textContent = 'Restored from local storage';
+                }
+            } catch (e) {
+                console.error('Error loading from localStorage:', e);
+            }
+        }
+
+        // Initialize
+        document.getElementById('date').valueAsDate = new Date();
+        loadFromLocalStorage();
+        render();
+
+        function updateColor() {
+            const type = document.getElementById('type').value;
+            document.getElementById('color').value = type === 'buy' ? '#22c55e' : '#ef4444';
+        }
+
+        function addTransaction() {
+            const ticker = document.getElementById('ticker').value.toUpperCase().trim();
+            const type = document.getElementById('type').value;
+            const volume = parseFloat(document.getElementById('volume').value);
+            const price = parseFloat(document.getElementById('price').value);
+            const date = document.getElementById('date').value;
+            const color = document.getElementById('color').value;
+
+            if (!ticker || !volume || !price || !date) {
+                alert('Please fill all fields');
+                return;
+            }
+
+            transactions.push({
+                id: Date.now(),
+                ticker,
+                type,
+                volume,
+                price,
+                date,
+                color,
+                total: volume * price
+            });
+
+            document.getElementById('volume').value = '';
+            document.getElementById('price').value = '';
+            saveToLocalStorage();
+            render();
+        }
+
+        function deleteTransaction(id) {
+            if (confirm('Delete this transaction?')) {
+                transactions = transactions.filter(t => t.id !== id);
+                saveToLocalStorage();
+                render();
+            }
+        }
+
+        function startEdit(id) {
+            editingId = id;
+            render();
+        }
+
+        function saveEdit(id) {
+            const volume = parseFloat(document.getElementById('editVolume' + id).value);
+            const price = parseFloat(document.getElementById('editPrice' + id).value);
+            const date = document.getElementById('editDate' + id).value;
+            const color = document.getElementById('editColor' + id).value;
+
+            transactions = transactions.map(t => 
+                t.id === id ? {...t, volume, price, date, color, total: volume * price} : t
+            );
+            editingId = null;
+            saveToLocalStorage();
+            render();
+        }
+
+        function cancelEdit() {
+            editingId = null;
+            render();
+        }
+
+        function getStockSummary() {
+            const summary = {};
+            transactions.forEach(t => {
+                if (!summary[t.ticker]) {
+                    summary[t.ticker] = { ticker: t.ticker, totalVolume: 0, moneyBalance: 0 };
+                }
+                if (t.type === 'buy') {
+                    summary[t.ticker].totalVolume += t.volume;
+                    summary[t.ticker].moneyBalance -= t.total;
+                } else {
+                    summary[t.ticker].totalVolume -= t.volume;
+                    summary[t.ticker].moneyBalance += t.total;
+                }
+            });
+            return Object.values(summary);
+        }
+
+        function getNetBalance() {
+            return transactions.reduce((sum, t) => 
+                t.type === 'buy' ? sum - t.total : sum + t.total, 0
+            );
+        }
+
+        function selectStock(ticker) {
+            selectedStock = selectedStock === ticker ? null : ticker;
+            render();
+        }
+
+        function moveToCompleted(ticker) {
+            const stockTransactions = transactions.filter(t => t.ticker === ticker);
+            const stockSummary = getStockSummary().find(s => s.ticker === ticker);
+            
+            completedStocks.push({
+                ticker,
+                transactions: stockTransactions,
+                performance: stockSummary.moneyBalance,
+                completedDate: new Date().toISOString().split('T')[0]
+            });
+            
+            transactions = transactions.filter(t => t.ticker !== ticker);
+            selectedStock = null;
+            saveToLocalStorage();
+            render();
+        }
+
+        function restoreFromCompleted(ticker) {
+            const completed = completedStocks.find(c => c.ticker === ticker);
+            transactions.push(...completed.transactions);
+            completedStocks = completedStocks.filter(c => c.ticker !== ticker);
+            saveToLocalStorage();
+            render();
+        }
+
+        function toggleArchived() {
+            const section = document.getElementById('completedSection');
+            const toggle = document.getElementById('archiveToggle');
+            if (section.classList.contains('hidden')) {
+                section.classList.remove('hidden');
+                toggle.textContent = 'Hide';
+            } else {
+                section.classList.add('hidden');
+                toggle.textContent = 'Show';
+            }
+        }
+
+        function exportData(autoSave = false) {
+            const data = {
+                transactions,
+                completedStocks,
+                exportDate: new Date().toISOString(),
+                version: '1.0'
+            };
+
+            const dataStr = JSON.stringify(data, null, 2);
+            const dataBlob = new Blob([dataStr], { type: 'application/json' });
+            const url = URL.createObjectURL(dataBlob);
+            const link = document.createElement('a');
+            
+            const timestamp = new Date().toISOString().replace(/[:.]/g, '-').slice(0, -5);
+            link.href = url;
+            link.download = `portfolio-backup-${timestamp}.json`;
+            
+            link.click();
+            URL.revokeObjectURL(url);
+            
+            saveToLocalStorage();
+        }
+
+        function importData(event) {
+            const file = event.target.files[0];
+            if (!file) return;
+
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                try {
+                    const data = JSON.parse(e.target.result);
+                    if (data.transactions) transactions = data.transactions;
+                    if (data.completedStocks) completedStocks = data.completedStocks;
+                    
+                    saveToLocalStorage();
+                    alert('✅ Data imported successfully!');
+                    render();
+                } catch (error) {
+                    alert('❌ Error importing data. Please check the file format.');
+                }
+            };
+            reader.readAsText(file);
+            event.target.value = '';
+        }
+
+        function render() {
+            const netBalance = getNetBalance();
+            const balanceEl = document.getElementById('netBalance');
+            balanceEl.textContent = '$' + netBalance.toFixed(2);
+            balanceEl.className = 'amount ' + (netBalance >= 0 ? 'positive' : 'negative');
+
+            const stockSummary = getStockSummary();
+            const stockListEl = document.getElementById('stockList');
+            
+            if (stockSummary.length === 0) {
+                stockListEl.innerHTML = '<div class="empty-state">No active stocks yet. Add your first transaction!</div>';
+            } else {
+                stockListEl.innerHTML = stockSummary.map(stock => `
+                    <div class="stock-item" onclick="selectStock('${stock.ticker}')">
+                        <div style="display: flex; justify-content: space-between; align-items: start;">
+                            <div style="flex: 1;">
+                                <h3>${stock.ticker}</h3>
+                                <div class="stock-stats">
+                                    <div><label>Volume</label><div>${stock.totalVolume.toFixed(2)}</div></div>
+                                    <div><label>Balance</label><div class="${stock.moneyBalance >= 0 ? 'positive' : 'negative'}">$${stock.moneyBalance.toFixed(2)}</div></div>
+                                </div>
+                            </div>
+                            ${stock.totalVolume === 0 ? `
+                                <button class="btn btn-sm btn-purple" onclick="event.stopPropagation(); moveToCompleted('${stock.ticker}')">
+                                    Complete
+                                </button>
+                            ` : ''}
+                        </div>
+                    </div>
+                `).join('');
+            }
+
+            document.getElementById('completedCount').textContent = completedStocks.length;
+            document.getElementById('completedList').innerHTML = completedStocks.map(stock => `
+                <div class="stock-item">
+                    <div style="display: flex; justify-content: space-between; align-items: start;">
+                        <div>
+                            <h3>${stock.ticker}</h3>
+                            <p style="font-size: 0.8rem; color: #94a3b8; margin: 5px 0;">Completed: ${stock.completedDate}</p>
+                            <div style="font-size: 0.9rem;">
+                                <span style="color: #94a3b8;">Performance: </span>
+                                <span class="${stock.performance >= 0 ? 'positive' : 'negative'}" style="font-weight: bold;">
+                                    ${stock.performance >= 0 ? '📈' : '📉'} $${stock.performance.toFixed(2)}
+                                </span>
+                            </div>
+                        </div>
+                        <button class="btn btn-sm btn-blue" onclick="restoreFromCompleted('${stock.ticker}')">Restore</button>
+                    </div>
+                </div>
+            `).join('');
+
+            if (selectedStock) {
+                document.getElementById('transactionSection').classList.remove('hidden');
+                document.getElementById('selectedTicker').textContent = selectedStock;
+                
+                const stockTransactions = transactions
+                    .filter(t => t.ticker === selectedStock)
+                    .sort((a, b) => new Date(b.date) - new Date(a.date));
+                
+                document.getElementById('transactionList').innerHTML = stockTransactions.map(t => `
+                    <div class="transaction" style="border-left-color: ${t.color}">
+                        ${editingId === t.id ? `
+                            <div class="edit-form">
+                                <div class="edit-row">
+                                    <input type="number" id="editVolume${t.id}" value="${t.volume}" step="0.01" placeholder="Volume">
+                                    <input type="number" id="editPrice${t.id}" value="${t.price}" step="0.01" placeholder="Price">
+                                    <input type="color" id="editColor${t.id}" value="${t.color}">
+                                </div>
+                                <input type="date" id="editDate${t.id}" value="${t.date}">
+                                <div style="display: flex; gap: 8px;">
+                                    <button class="btn btn-green btn-sm" onclick="saveEdit(${t.id})" style="flex: 1;">✓ Save</button>
+                                    <button class="btn btn-sm" onclick="cancelEdit()" style="flex: 1; background: #475569;">✗ Cancel</button>
+                                </div>
+                            </div>
+                        ` : `
+                            <div class="transaction-header">
+                                <div style="flex: 1;">
+                                    <div style="margin-bottom: 5px;">
+                                        <span class="transaction-type type-${t.type}">${t.type.toUpperCase()}</span>
+                                        <span style="margin-left: 10px; font-weight: 600;">${t.volume} @ $${t.price}</span>
+                                    </div>
+                                    <div style="font-size: 0.8rem; color: #94a3b8;">
+                                        <span>${t.date}</span>
+                                        <span style="margin-left: 15px; font-weight: 600; color: white;">Total: $${t.total.toFixed(2)}</span>
+                                    </div>
+                                </div>
+                                <div class="transaction-actions">
+                                    <button class="icon-btn" onclick="startEdit(${t.id})" title="Edit">✏️</button>
+                                    <button class="icon-btn" onclick="deleteTransaction(${t.id})" title="Delete">🗑️</button>
+                                </div>
+                            </div>
+                        `}
+                    </div>
+                `).join('');
+            } else {
+                document.getElementById('transactionSection').classList.add('hidden');
+            }
+        }
+
+        render();
+    </script>
+</body>
+</html>
